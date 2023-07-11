@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "home", component: PageHomeComponent },
   { path: "my-plants", component: PageMyPlantsComponent },
   { path: "admin", component: PageAdminComponent },
+  { path: "**", component: PageNotFoundComponent},// redirection page 404 !!! important en derniere position!!
 ];
 
 @NgModule({
