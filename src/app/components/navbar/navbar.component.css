@@ -1,0 +1,7 @@
+/* le nom conventionnel de cette classe
+est normalement "active"
+*/
+.ma-classe-active {
+  color: green;
+  font-weight: bolder;
+}

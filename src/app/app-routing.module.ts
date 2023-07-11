@@ -6,7 +6,8 @@ import { PageMyPlantsComponent } from "./pages/page-my-plants/page-my-plants.com
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [
-  { path: "", component: PageHomeComponent },
+  {path: "", redirectTo: "home", pathMatch:"full" },// si un user arrive sur localhost:4200 on redirige vers localhost:4200/home
+  { path: "home", component: PageHomeComponent },
   { path: "my-plants", component: PageMyPlantsComponent },
   { path: "admin", component: PageAdminComponent },
 ];
