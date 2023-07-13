@@ -8,7 +8,8 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
-  plantsToDisplay: Plant[] = [];
+  plantsToDisplay!: Plant[];
+  categories!: string[];
 
   constructor(private plantsService: PlantsService) {}
 
@@ -16,6 +17,8 @@ export class PageHomeComponent implements OnInit {
     this.plantsService.getPlants().subscribe((plants) => {
       this.plantsToDisplay = plants;
       console.log(this.plantsToDisplay);
+      this.categories = [...new Set(this.plantsToDisplay.map(plant=>plant.categorie))];
+
     });
   }
 }

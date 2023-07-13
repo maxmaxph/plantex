@@ -1,5 +1,5 @@
-<div class="container-plants">
-    <ul>
-      <li *ngFor="let plant of Plants">{{ plant.nom }}</li>
-    </ul>
-  </div>
+<div class="container-plants mt-2 d-flex flex-wrap">
+  
+  <app-card *ngFor="let plant of Plants" [maSuperPlante1]="plant"></app-card>
+   
+</div>
