@@ -1,14 +1,6 @@
 <div class="container d-flex">
   
-  <!-- <h1 class="title">Plantdex</h1> -->
-  <!-- <div class="container-plants">
-    <ul>
-      <li *ngFor="let plant of plantsToDisplay">{{ plant.nom }}</li>
-    </ul>
-  </div> -->
-  <!-- <app-plantlist [Plants]="plantsToDisplay"></app-plantlist> -->
-
-<app-filterbar [categoriesPlants]="categories"></app-filterbar>  
+<app-filterbar [categoriesPlants]="categories" (categorieEnvoiParent)="aLecouteDeLenfant($event)"></app-filterbar>  
 <app-plantlist [Plants]="plantsToDisplay"></app-plantlist>
 
 </div>

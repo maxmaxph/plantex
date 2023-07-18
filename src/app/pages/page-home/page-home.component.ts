@@ -8,17 +8,34 @@ import { Plant } from 'src/app/models/plant';
   styleUrls: ['./page-home.component.css']
 })
 export class PageHomeComponent implements OnInit {
+  allPlants!: Plant[];
   plantsToDisplay!: Plant[];
   categories!: string[];
+ 
 
   constructor(private plantsService: PlantsService) {}
 
- ngOnInit(): void {
-    this.plantsService.getPlants().subscribe((plants) => {
-      this.plantsToDisplay = plants;
-      console.log(this.plantsToDisplay);
-      this.categories = [...new Set(this.plantsToDisplay.map(plant=>plant.categorie))];
+ngOnInit() {
+    this.plantsService.getPlants().subscribe((data: Plant[]) => {
+      console.log(data);
 
+      this.plantsToDisplay = [...data];
+      this.allPlants = [...data];
+      // Pour supprimer les doublons d'un tableau
+      // [...new Set(tableau)]
+      this.categories = [
+        ...new Set(this.plantsToDisplay.map((plant) => plant.categorie)),
+      ];
+      console.log('this.categories : ', this.categories);
     });
+  }
+
+  aLecouteDeLenfant(categoryDeLenfant: string[]) {
+    console.log('categoryDeLenfant', categoryDeLenfant);
+    // on garde les plantes dont la
+    // categorie est inclu dans le tableau categoryDeLenfant
+    this.plantsToDisplay = this.allPlants.filter((plant) =>
+      categoryDeLenfant.includes(plant.categorie)
+    );
   }
 }
