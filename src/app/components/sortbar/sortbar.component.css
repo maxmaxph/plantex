@@ -1,0 +1,9 @@
+.sort{
+    
+    margin-left: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+}
+.btn{
+    margin-left: 0.7rem;
+}

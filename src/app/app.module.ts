@@ -11,6 +11,8 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { PlantlistComponent } from './components/plantlist/plantlist.component';
 import { CardComponent } from './components/card/card.component';
 import { FilterbarComponent } from './components/filterbar/filterbar.component';
+import { SearchbarComponent } from './components/searchbar/searchbar.component';
+import { SortbarComponent } from './components/sortbar/sortbar.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import { FilterbarComponent } from './components/filterbar/filterbar.component';
     PageNotFoundComponent,
     PlantlistComponent,
     CardComponent,
-    FilterbarComponent
+    FilterbarComponent,
+    SearchbarComponent,
+    SortbarComponent,
+  
+    
   ],
   imports: [
     BrowserModule,

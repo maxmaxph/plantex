@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Plant } from '../models/plant';
-import { Observable } from "rxjs";
+import { Observable, catchError, map, throwError } from "rxjs";
+import { InterfacePlant } from '../interfaces/plant.interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ import { Observable } from "rxjs";
 export class PlantsService {
   constructor(private http: HttpClient) {}
 
-  getPlants(): Observable<Plant[]> {
-    return this.http.get<Plant[]>("http://localhost:3000/plants");
+  getPlants() : any {
+    const response = this.http.get<InterfacePlant>("http://localhost:3000/api/plants").pipe(map(e => e.data))
+        
+    return response
+  };
   }
-}

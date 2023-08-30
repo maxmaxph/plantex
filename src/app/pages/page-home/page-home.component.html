@@ -1,6 +1,13 @@
-<div class="container d-flex">
-  
-<app-filterbar [categoriesPlants]="categories" (categorieEnvoiParent)="aLecouteDeLenfant($event)"></app-filterbar>  
-<app-plantlist [Plants]="plantsToDisplay"></app-plantlist>
+<div id="flexIt">
 
+<div>
+<app-filterbar [categoriesPlants]="categories" (categorieEnvoiParent)="aLecouteDeLenfant($event)"></app-filterbar>  
+
+</div>
+<div>
+<app-searchbar (userInput)="onSearchDesParents($event)"></app-searchbar>  
+<div>
+<app-sortbar></app-sortbar>
+<app-plantlist [Plants]="plantToDisplayFiltered"></app-plantlist>
+</div>
 </div>

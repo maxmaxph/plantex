@@ -1,0 +1,24 @@
+<div class="mt-3">
+  <div>
+    <div class="search">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Rechercher votre plante..."
+        (input)="userInput.emit($event)"
+      />
+    </div>
+  </div>
+</div>
+
+<!--autre version interessante  <div class="form-outline">
+  <input
+    #resultSearch
+    type="search"
+    id="form1"
+    class="form-control"
+    placeholder="Rechercher"
+    aria-label="Search"
+    (input)="userInput.emit(resultSearch.value)"
+  />
+</div> -->
